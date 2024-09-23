@@ -4,7 +4,6 @@
  */
 var isValid = function (word) {
     let vowel = false
-    let number = false
     let special = true
     let consonant = false
 
@@ -18,9 +17,6 @@ var isValid = function (word) {
       }
       if (word.charAt(i) == "@" || word.charAt(i) == "#" || word.charAt(i) == "$") {
           special = false
-      }
-      if (word.charCodeAt(i) >= 48 && word.charAt(i) <= 57) {
-          number = true
       }
   }
     if (vowel == true && consonant == true && special == true) {
