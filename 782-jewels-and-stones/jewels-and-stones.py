@@ -6,5 +6,4 @@ class Solution:
             hashMap[stones[i]] = hashMap.get(stones[i], 0) + 1
         for i in range(len(jewels)):
             ans += hashMap.get(jewels[i] , 0)
-        print(hashMap)
         return ans
