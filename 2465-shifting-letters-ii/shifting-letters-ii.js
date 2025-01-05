@@ -17,7 +17,6 @@ var shiftingLetters = function (s, shifts) {
     }
     for (let i = 0; i < arr.length; i++) {
         const oldIndex = alphabets.indexOf(arr[i]);
-        if (oldIndex === -1) continue;
         let index = (count[i] + oldIndex) % 26;
         if (index < 0) {
             index += 26;
