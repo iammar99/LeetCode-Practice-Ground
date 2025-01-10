@@ -3,15 +3,11 @@
  * @param {string} pref
  * @return {number}
  */
-var prefixCount = function(words, pref) {
-      let count = 0;
-    const prefLen = pref.length;
-    for (let word of words) {
-        if (word.length >= prefLen) {
-            if (word.substring(0, prefLen) === pref) {
-                count++;
-            }
-        }
+var prefixCount = function (words, pref) {
+    let count = 0
+    for (let i = 0; i < words.length; i++) {
+        const word = words[i].slice(0, pref.length)
+        if (word == pref) count++
     }
-    return count;
+    return count
 };
