@@ -2,21 +2,21 @@
  * @param {string} boxes
  * @return {number[]}
  */
-var minOperations = function(boxes) {
-    let pos = [], ans = [];
-        let len = boxes.length;
-        
-        for(let i = 0; i < len; i++) 
-            if(boxes[i] === '1')
-                pos.push(i);
-        
-        for(let i = 0; i < len; i++) {
-            let sum = 0;
-            for(let idx of pos) {
-                let dst = Math.abs(i - idx);
-                sum += dst;
-            }
-            ans.push(sum);
+var minOperations = function (boxes) {
+    let ones = []
+    let ans = []
+    for (let i = 0; i < boxes.length; i++) {
+        if (boxes[i] == "1") {
+            ones.push(i)
         }
-        return ans;
+    }
+    for (let i = 0; i < boxes.length; i++) {
+        let sum = 0
+        for (let j = 0; j < ones.length; j++) {
+            let dist = Math.abs(i - ones[j])
+            sum += dist
+        }
+        ans.push(sum)
+    }
+    return ans
 };
