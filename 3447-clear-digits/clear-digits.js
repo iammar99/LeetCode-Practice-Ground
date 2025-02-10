@@ -5,10 +5,10 @@
 var clearDigits = function (s) {
     let stack = []
     for (let i = 0; i < s.length; i++) {
-        stack.push(s[i])
-        if (s.charCodeAt(i) <= 57 && s.charCodeAt(i) >= 48) {
+        if (s.charCodeAt(i) >= 48 && s.charCodeAt(i) <= 57) {
             stack.pop()
-            stack.pop()
+        } else {
+            stack.push(s.charAt(i))
         }
     }
     return stack.join("")
