@@ -3,10 +3,5 @@
  * @return {number}
  */
 var smallestNumber = function(n) {
-        let x = 1;
-    while (x < n) {
-        x = (x << 1) + 1;
-    }
-
-    return x;
+    return parseInt(Array(n.toString(2).length).fill(1).join(""),2)
 };
