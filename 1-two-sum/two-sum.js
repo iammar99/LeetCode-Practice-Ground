@@ -3,23 +3,15 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function (nums, target) {
-    let left_pointer = 0
-    let right_pointer = nums.length - 1
-    let arr = [...nums]
-    arr.sort((a, b) => a - b)
-    while (left_pointer < right_pointer) {
-        let sum = arr[left_pointer] + arr[right_pointer]
-        if (sum == target) {
-            let firstIndex = nums.indexOf(arr[left_pointer])
-            nums[firstIndex] = "a"
-            return [firstIndex, nums.indexOf(arr[right_pointer])]
-        }
-        else if (sum > target) {
-            right_pointer--
-        }
-        else {
-            left_pointer++
-        }
+var twoSum = function(nums, target) {
+    const map = new Map();
+    for (let i = 0; i < nums.length; i++) {
+        
+        const complement = target - nums[i];
+        const index = map.get(nums[i]);
+
+        if (index !== undefined) return [index, i];
+        map.set(complement, i);
     }
+    return 0;
 };
